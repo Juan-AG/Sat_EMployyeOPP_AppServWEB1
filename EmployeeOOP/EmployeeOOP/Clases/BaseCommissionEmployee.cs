@@ -6,28 +6,23 @@ using System.Threading.Tasks;
 
 namespace EmployeeOOP.Clases
 {
-    public class HourlyEmployee:Employee
+    public class BaseCommissionEmployee:CommissionEmployee
     {
         #region Propiedades
-        public float? Hours { get; set; }
-        public float? HourValue { get; set; }
+        public decimal Base { get; set; }
         #endregion
 
         #region Metodos
-        public HourlyEmployee()
-        {
-                
-        }
-
         public override decimal GetValueToPay()
         {
-            return Convert.ToDecimal(Hours * HourValue);
+            return Convert.ToDecimal((CommisionPorcentaje / 100) * Sales )+Base;
         }
 
         public override string ToString()
         {
-            return $" {base.ToString()} "+
-                $"Salario por horas:{GetValueToPay():C2}";
+            return $" {base.ToString()} " +
+                $"Comision de porcentaje:{CommisionPorcentaje}\n" +
+                $"Ventas:{Sales}";
         }
         #endregion
     }
