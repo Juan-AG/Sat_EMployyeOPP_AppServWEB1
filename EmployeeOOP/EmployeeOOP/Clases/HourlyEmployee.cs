@@ -9,8 +9,8 @@ namespace EmployeeOOP.Clases
     public class HourlyEmployee:Employee
     {
         #region Propiedades
-        public float? Hours { get; set; }
-        public float? HourValue { get; set; }
+        public int? Hours { get; set; }
+        public decimal? HourValue { get; set; }
         #endregion
 
         #region Metodos
